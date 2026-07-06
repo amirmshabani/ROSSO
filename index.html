@@ -3,84 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ROSSO Cafe</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; overflow: hidden; }
         body {
             font-family: 'Tahoma', 'Vazirmatn', system-ui, sans-serif;
+            background: #D32F2F;
+        }
+        .grid-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
     </style>
 </head>
 
-<body class="bg-red-700 text-white min-h-screen">
+<body class="text-white h-screen flex flex-col">
 
-    <!-- Hero Section -->
-    <div class="relative h-[40vh] min-h-[220px] max-h-[360px]">
+    <!-- Hero Video -->
+    <div class="relative flex-shrink-0" style="height: 33vh; min-height: 185px;">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="https://cdn.imgurl.ir/uploads/f309042_20260702_170544.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 bg-black/45"></div>
 
-        <div class="absolute top-0 left-0 right-0 p-3 sm:p-4 flex justify-between items-center z-10">
-            <div class="flex items-center gap-2 sm:gap-3">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <span class="text-red-700 text-2xl sm:text-4xl font-bold">R</span>
-                </div>
-                <span class="text-xl sm:text-3xl font-bold tracking-wider">ROSSO</span>
+        <div class="absolute top-0 left-0 right-0 p-3 flex items-center z-10">
+            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <span class="text-[#D32F2F] text-lg font-bold">R</span>
             </div>
+            <span class="text-lg font-bold tracking-wider mr-2">ROSSO</span>
         </div>
 
-        <div class="absolute bottom-8 sm:bottom-12 left-0 right-0 text-center px-4 sm:px-6">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-2">ROSSO</h1>
-            <p class="text-base sm:text-xl opacity-90">Italian Taste • Persian Soul</p>
+        <div class="absolute bottom-5 left-0 right-0 text-center">
+            <h1 class="text-3xl font-bold mb-0.5">ROSSO</h1>
+            <p class="text-xs opacity-75 tracking-widest">Italian Taste • Persian Soul</p>
         </div>
     </div>
 
-    <!-- Navigation Buttons -->
-    <div class="bg-red-700 pb-8 sm:pb-12 px-4 sm:px-6">
-        <div class="max-w-md mx-auto">
-            <div class="grid grid-cols-2 gap-3 sm:gap-5">
-                <a href="#"
-                    class="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center hover:scale-105 transition-all">
-                    <img src="https://i.postimg.cc/D02Kkrdd/file-00000000cbcc7246a79de57e813d0f20.png" alt="">
-                </a>
+    <!-- Navigation Grid -->
+    <div class="flex-1 bg-[#D32F2F] px-3 pb-3 pt-2 flex flex-col min-h-0">
+        <div class="max-w-[360px] mx-auto w-full h-full grid grid-cols-2 grid-rows-3 gap-1.5">
 
-                <a href="#"
-                    class="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center hover:scale-105 transition-all">
-                    <img src="https://i.postimg.cc/sfKkGZJy/file-0000000070e87246b340a02652bac7f1.png" alt="">
-                </a>
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+                <img src="https://i.postimg.cc/D02Kkrdd/file-00000000cbcc7246a79de57e813d0f20.png" alt="">
+            </a>
 
-                <a href="#"
-                    class="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center hover:scale-105 transition-all">
-                    <div
-                        class="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center">
-                        <i class="fas fa-handshake text-red-700 text-3xl sm:text-5xl"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-2xl font-bold">همکاری</h3>
-                </a>
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+                <img src="https://i.postimg.cc/sfKkGZJy/file-0000000070e87246b340a02652bac7f1.png" alt="">
+            </a>
 
-                <a href="#"
-                    class="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-center hover:scale-105 transition-all">
-                    <div
-                        class="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center">
-                        <i class="fas fa-comments text-red-700 text-3xl sm:text-5xl"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-2xl font-bold">نظرات</h3>
-                </a>
-            </div>
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+                <img src="https://i.postimg.cc/W135xPX2/Chat-GPT-Image-Jul-6-2026-01-55-40-PM.png" alt="">
+            </a>
 
-            <div class="mt-6 sm:mt-8 flex justify-center">
-                <a href="#"
-                    class="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl sm:rounded-3xl px-8 sm:px-12 py-4 sm:py-6 text-center hover:scale-105 transition-all">
-                    <div
-                        class="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center">
-                        <i class="fab fa-instagram text-red-700 text-3xl sm:text-5xl"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-2xl font-bold">INSTAGRAM</h3>
-                </a>
-            </div>
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+                <img src="https://i.postimg.cc/L5bx8Y0j/feed.png" alt="">
+            </a>
+
+            <a href="#" class="col-span-2 grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+                <img src="https://i.postimg.cc/gkLw7LdK/Chat-GPT-Image-Jul-6-2026-01-38-14-PM.png" alt="">
+            </a>
+
         </div>
     </div>
 
