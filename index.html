@@ -31,6 +31,11 @@
             overflow: hidden;
             padding: 1px !important;
         }
+        .nav-grid .grid-cell.grid-cell-last {
+            grid-column: 1 / span 2;
+            justify-self: center;
+            width: calc(50% - 1.5px);
+        }
     </style>
 </head>
 <body class="text-white h-screen flex flex-col">
@@ -67,9 +72,9 @@
             <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/L5bx8Y0j/feed.png" alt="">
             </a>
-            
-            <!-- المان آخر - هم اندازه بقیه + وسط چین -->
-            <a href="#" class="grid-cell col-start-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+
+            <!-- المان آخر - تمام‌عرض span و وسط‌چین -->
+            <a href="#" class="grid-cell grid-cell-last bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/gkLw7LdK/Chat-GPT-Image-Jul-6-2026-01-38-14-PM.png" alt="">
             </a>
         </div>
