@@ -20,13 +20,25 @@
             object-fit: contain;
             display: block;
         }
+        /* فیت کردن دقیق گرید در فضای موجود */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 6px;
+            height: 100%;
+        }
+        .nav-grid .grid-cell {
+            min-height: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body class="text-white h-screen flex flex-col">
 
-    <!-- Hero Video -->
-    <div class="relative flex-shrink-0" style="height: 33vh; min-height: 185px;">
+    <!-- Hero Video — ارتفاع کمتر -->
+    <div class="relative flex-shrink-0" style="height: 28vh; min-height: 155px;">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="https://cdn.imgurl.ir/uploads/f309042_20260702_170544.mp4" type="video/mp4">
         </video>
@@ -39,15 +51,15 @@
             <span class="text-lg font-bold tracking-wider mr-2">ROSSO</span>
         </div>
 
-        <div class="absolute bottom-5 left-0 right-0 text-center">
-            <h1 class="text-3xl font-bold mb-0.5">ROSSO</h1>
-            <p class="text-xs opacity-75 tracking-widest">Italian Taste • Persian Soul</p>
+        <div class="absolute bottom-4 left-0 right-0 text-center">
+            <h1 class="text-2xl font-bold mb-0.5">ROSSO</h1>
+            <p class="text-[10px] opacity-75 tracking-widest">Italian Taste • Persian Soul</p>
         </div>
     </div>
 
-    <!-- Navigation Grid -->
-    <div class="flex-1 bg-[#D32F2F] px-3 pb-3 pt-2 flex flex-col min-h-0">
-        <div class="max-w-[360px] mx-auto w-full h-full grid grid-cols-2 grid-rows-3 gap-1.5">
+    <!-- Navigation Grid — جمع‌وجورتر -->
+    <div class="flex-1 bg-[#D32F2F] px-2.5 pb-2.5 pt-1.5 flex flex-col min-h-0">
+        <div class="max-w-[360px] mx-auto w-full flex-1 min-h-0 nav-grid">
 
             <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/D02Kkrdd/file-00000000cbcc7246a79de57e813d0f20.png" alt="">
