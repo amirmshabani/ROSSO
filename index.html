@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -20,12 +19,11 @@
             object-fit: contain;
             display: block;
         }
-        /* فیت کردن دقیق گرید در فضای موجود */
         .nav-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr;
-            gap: 6px;
+            gap: 5px;
             height: 100%;
         }
         .nav-grid .grid-cell {
@@ -34,56 +32,44 @@
         }
     </style>
 </head>
-
 <body class="text-white h-screen flex flex-col">
-
-    <!-- Hero Video — ارتفاع کمتر -->
-    <div class="relative flex-shrink-0" style="height: 28vh; min-height: 155px;">
+    <!-- Hero Video — کوچکتر شده -->
+    <div class="relative flex-shrink-0" style="height: 24vh; min-height: 140px;">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="https://cdn.imgurl.ir/uploads/f309042_20260702_170544.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-black/45"></div>
-
         <div class="absolute top-0 left-0 right-0 p-3 flex items-center z-10">
             <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
                 <span class="text-[#D32F2F] text-lg font-bold">R</span>
             </div>
             <span class="text-lg font-bold tracking-wider mr-2">ROSSO</span>
         </div>
-
         <div class="absolute bottom-4 left-0 right-0 text-center">
             <h1 class="text-2xl font-bold mb-0.5">ROSSO</h1>
             <p class="text-[10px] opacity-75 tracking-widest">Italian Taste • Persian Soul</p>
         </div>
     </div>
 
-    <!-- Navigation Grid — جمع‌وجورتر -->
-    <div class="flex-1 bg-[#D32F2F] px-2.5 pb-2.5 pt-1.5 flex flex-col min-h-0">
+    <!-- Navigation Grid — فشرده‌تر -->
+    <div class="flex-1 bg-[#D32F2F] px-2 pb-2 pt-1 flex flex-col min-h-0">
         <div class="max-w-[360px] mx-auto w-full flex-1 min-h-0 nav-grid">
-
-            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/D02Kkrdd/file-00000000cbcc7246a79de57e813d0f20.png" alt="">
             </a>
-
-            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/sfKkGZJy/file-0000000070e87246b340a02652bac7f1.png" alt="">
             </a>
-
-            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/W135xPX2/Chat-GPT-Image-Jul-6-2026-01-55-40-PM.png" alt="">
             </a>
-
-            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+            <a href="#" class="grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/L5bx8Y0j/feed.png" alt="">
             </a>
-
-            <a href="#" class="col-span-2 grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1.5 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+            <a href="#" class="col-span-2 grid-cell bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center p-1 hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
                 <img src="https://i.postimg.cc/gkLw7LdK/Chat-GPT-Image-Jul-6-2026-01-38-14-PM.png" alt="">
             </a>
-
         </div>
     </div>
-
 </body>
-
 </html>
