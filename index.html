@@ -51,6 +51,14 @@
             direction: ltr;
             user-select: none;
         }
+        .insta-half {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            min-height: 0;
+        }
         @media (max-width: 380px) {
             .nav-grid .grid-cell {
                 padding: 6px !important;
@@ -132,11 +140,18 @@
                 <img src="https://i.postimg.cc/d0pzhHNt/moctail.png" alt="Moctail">
             </a>
 
-            <!-- المان آخر: با یک کلیک، آیدی اینستاگرام کپی می‌شود -->
-            <div class="grid-cell grid-cell-last bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150 cursor-pointer"
-                 onclick="copyInstaHandle()">
-                <span class="insta-handle">rosso_cafe_pizza</span>
-                <img src="https://i.postimg.cc/2809q93H/insta.png" alt="Instagram">
+            <!-- المان آخر: دو بخش مجزا -->
+            <div class="grid-cell grid-cell-last bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl flex flex-col items-center justify-center overflow-hidden">
+                <!-- بخش بالا: کلیک = کپی آیدی اینستاگرام -->
+                <div class="insta-half cursor-pointer hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150"
+                     onclick="copyInstaHandle()">
+                    <span class="insta-handle">rosso_cafe_pizza</span>
+                </div>
+                <!-- بخش پایین: کلیک = رفتن به صفحه اینستاگرام -->
+                <a href="https://www.instagram.com/rosso_cafe_pizza" target="_blank" rel="noopener noreferrer"
+                   class="insta-half hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+                    <img src="https://i.postimg.cc/2809q93H/insta.png" alt="Instagram">
+                </a>
             </div>
         </div>
     </div>
