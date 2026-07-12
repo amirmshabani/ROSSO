@@ -36,12 +36,47 @@
             grid-column: 1 / span 2;
             justify-self: center;
             width: calc(50% - 15.5px);
+            flex-direction: column;
+            gap: 4px;
+        }
+        .nav-grid .grid-cell.grid-cell-last img {
+            flex: 1;
+            min-height: 0;
+        }
+        .insta-handle {
+            font-size: 11px;
+            letter-spacing: 0.3px;
+            color: #ffffff;
+            opacity: 0.9;
+            direction: ltr;
+            user-select: none;
         }
         @media (max-width: 380px) {
             .nav-grid .grid-cell {
                 padding: 6px !important;
                 margin: 2px 5px;
             }
+        }
+        /* Copy toast */
+        #copy-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: 13px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 50;
+            white-space: nowrap;
+        }
+        #copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
@@ -97,11 +132,47 @@
                 <img src="https://i.postimg.cc/d0pzhHNt/moctail.png" alt="Moctail">
             </a>
 
-            <!-- المان آخر - تمام‌عرض span و وسط‌چین -->
-            <a href="https://www.instagram.com/rosso_cafe_pizza" class="grid-cell grid-cell-last bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150">
+            <!-- المان آخر: با یک کلیک، آیدی اینستاگرام کپی می‌شود -->
+            <div class="grid-cell grid-cell-last bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center hover:scale-[1.03] active:scale-[0.97] transition-transform duration-150 cursor-pointer"
+                 onclick="copyInstaHandle()">
+                <span class="insta-handle">rosso_cafe_pizza</span>
                 <img src="https://i.postimg.cc/2809q93H/insta.png" alt="Instagram">
-            </a>
+            </div>
         </div>
     </div>
+
+    <!-- Toast برای نمایش پیام کپی شد -->
+    <div id="copy-toast">آیدی اینستاگرام کپی شد ✓</div>
+
+    <script>
+        function copyInstaHandle() {
+            const handle = 'rosso_cafe_pizza';
+            const showToast = () => {
+                const toast = document.getElementById('copy-toast');
+                toast.classList.add('show');
+                clearTimeout(window.__toastTimer);
+                window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(handle).then(showToast).catch(() => fallbackCopy(handle, showToast));
+            } else {
+                fallbackCopy(handle, showToast);
+            }
+        }
+
+        function fallbackCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+            if (cb) cb();
+        }
+    </script>
 </body>
 </html>
